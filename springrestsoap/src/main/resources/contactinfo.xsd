@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://ankesh.com/springrestsoap/soap/dto"
+	xmlns:tns="http://ankesh.com/springrestsoap/soap/dto"
+	elementFormDefault="qualified">
+	<xs:simpleType name="emailAddress">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[^@]+@[^\.]+\..+" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="contactInfoSoapRequest">
+		<xs:sequence>
+			<xs:element name="contactName" type="xs:string" />
+			<xs:element name="emailAddress" type="tns:emailAddress" />
+			<xs:element name="phoneNumber" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="addContactInfoSoapRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ContactInfoSoapRequest" type="tns:contactInfoSoapRequest" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="addContactInfoSoapResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="success" type="xs:boolean" />
+				<xs:element name="errorCode" type="xs:string" />
+				<xs:element name="errorMessage" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

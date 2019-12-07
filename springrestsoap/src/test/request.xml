@@ -1,0 +1,15 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://ankesh.com/springrestsoap/soap/dto">
+    <soapenv:Header/>
+    <soapenv:Body>
+
+        <gs:addContactInfoSoapRequest>
+            <gs:ContactInfoSoapRequest>
+                <gs:contactName>"my contact"</gs:contactName>
+                <gs:emailAddress>"my mail id"</gs:emailAddress>
+                <gs:phoneNumber>"my phone no"</gs:phoneNumber>
+
+            </gs:ContactInfoSoapRequest>
+        </gs:addContactInfoSoapRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
